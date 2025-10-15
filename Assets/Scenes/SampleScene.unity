@@ -866,6 +866,21 @@ MonoBehaviour:
   maxMotorTorque: 1500
   maxSteeringAngle: 30
   brakeForce: 3000
+  gearRatios:
+  - 3.67
+  - 2.5
+  - 1.8
+  - 1.4
+  - 1
+  - 0.8
+  finalDriveRatio: 3.42
+  reverseGearRatio: 3.67
+  shiftDelay: 0.1
+  airResistance: 0.5
+  rollingResistance: 0.1
+  engineBrakingForce: 2
+  idleRPM: 800
+  maxRPM: 7000
   frontLeftWheel: {fileID: 1899937345}
   frontRightWheel: {fileID: 291776906}
   rearLeftWheel: {fileID: 1451824859}
