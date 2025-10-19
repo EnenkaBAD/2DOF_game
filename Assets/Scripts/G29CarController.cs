@@ -843,9 +843,6 @@ public class G29CarController : MonoBehaviour
             else if (inputControllerReader.Shifter2) ShiftToGear(2);
             else if (inputControllerReader.Shifter3) ShiftToGear(3);
             else if (inputControllerReader.Shifter4) ShiftToGear(-1);
-            //else if (inputControllerReader.RightShoulder) ShiftToGear(5);
-            //else if (inputControllerReader.LeftShoulder) ShiftToGear(6);
-            //else if (inputControllerReader.RightTrigger) ShiftToGear(-1);
             else ShiftToGear(0);
         }
     }

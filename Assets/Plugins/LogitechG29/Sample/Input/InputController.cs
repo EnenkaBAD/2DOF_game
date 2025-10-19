@@ -322,6 +322,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a47e17c7-7bba-45b7-82ab-9f8bdbf38199"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Logitech G29"",
+                    ""action"": ""Left Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""40147922-a6e1-4a95-8089-3d3a774617f1"",
                     ""path"": ""<Logitech G29 Racing Wheel>/leftStickButton"",
                     ""interactions"": """",
@@ -473,6 +484,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""Right Shift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f57a3a9e-04ff-499b-8999-a87fda08971c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Logitech G29"",
+                    ""action"": ""Right Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -514,7 +536,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8b245dcb-2b15-4ed2-84b8-21fc0d3279ab"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Logitech G29"",
