@@ -100,7 +100,7 @@ public class RealisticManualCarController : MonoBehaviour
 
     void CalculateEngineRPM()
     {
-        float speed = rb.velocity.magnitude; // м/с
+        float speed = rb.linearVelocity.magnitude; // м/с
         float wheelRPM = speed / (2f * Mathf.PI * rearLeft.radius) * 60f;
 
         if (currentGear == 0 || clutchPressed)
@@ -141,7 +141,7 @@ public class RealisticManualCarController : MonoBehaviour
 
     void ApplySteering()
     {
-        float speed = rb.velocity.magnitude;
+        float speed = rb.linearVelocity.magnitude;
         float angle = 0f;
         if (speed > 0.5f) angle = steering * maxSteeringAngle;
         frontLeft.steerAngle = angle;
@@ -209,7 +209,7 @@ public class RealisticManualCarController : MonoBehaviour
         GUILayout.BeginArea(new Rect(10, 10, 400, 400));
 
         GUILayout.Label("=== РЕАЛИСТИЧНАЯ МКПП ===");
-        GUILayout.Label($"Скорость: {(rb.velocity.magnitude * 3.6f):F1} км/ч");
+        GUILayout.Label($"Скорость: {(rb.linearVelocity.magnitude * 3.6f):F1} км/ч");
         GUILayout.Label($"Обороты: {engineRpm:F0} RPM");
         GUILayout.Label($"Передача: {GetGearName(currentGear)}");
         GUILayout.Label($"Газ: {(throttle * 100):F0}%");
