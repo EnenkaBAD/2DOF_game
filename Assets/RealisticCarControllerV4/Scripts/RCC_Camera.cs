@@ -51,7 +51,7 @@ public class RCC_Camera : RCC_Core {
                 if (!playerVehicle)
                     return Vector3.zero;
 
-                return playerVehicle.transform.InverseTransformDirection(playerVehicle.Rigid.velocity);
+                return playerVehicle.transform.InverseTransformDirection(playerVehicle.Rigid.linearVelocity);
 
             }
 
@@ -461,8 +461,8 @@ public class RCC_Camera : RCC_Core {
         //  Checking if camera is occluded by some colliders.
         CheckIfOccluded();
 
-        acceleration = (cameraTarget.playerVehicle.transform.InverseTransformDirection(cameraTarget.playerVehicle.Rigid.velocity) - lastVelocity) / Time.fixedDeltaTime;
-        lastVelocity = cameraTarget.playerVehicle.transform.InverseTransformDirection(cameraTarget.playerVehicle.Rigid.velocity);
+        acceleration = (cameraTarget.playerVehicle.transform.InverseTransformDirection(cameraTarget.playerVehicle.Rigid.linearVelocity) - lastVelocity) / Time.fixedDeltaTime;
+        lastVelocity = cameraTarget.playerVehicle.transform.InverseTransformDirection(cameraTarget.playerVehicle.Rigid.linearVelocity);
 
         acceleration.x = 0f;
         acceleration.y = 0f;

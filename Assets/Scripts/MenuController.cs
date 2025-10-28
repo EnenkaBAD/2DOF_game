@@ -3,17 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-
-    // Метод для кнопки "Играть"
     public void PlayGame()
-    {
-        SceneManager.LoadScene(1);        
+    { 
+        SceneManager.LoadSceneAsync(1);
+        Debug.Log("Загрузка сцены");   
     }   
     public void QuitGame()
     {
-        Debug.Log("Выход из игры...");
-
-        // Если мы в редакторе Unity
+        
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

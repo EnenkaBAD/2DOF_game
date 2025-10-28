@@ -123,7 +123,7 @@ public class RCC_DetachablePart : RCC_Core {
         //	If part is weak and loosen, apply angular velocity related to vehicle speed.
         if (addTorqueAfterLoose != Vector3.zero && strength <= loosePoint) {
 
-            float speed = transform.InverseTransformDirection(Rigid.velocity).z;        //	Local speed.
+            float speed = transform.InverseTransformDirection(Rigid.linearVelocity).z;        //	Local speed.
             Rigid.AddRelativeTorque(new Vector3(addTorqueAfterLoose.x * speed, addTorqueAfterLoose.y * speed, addTorqueAfterLoose.z * speed));      //	Applying local torque.
 
         }

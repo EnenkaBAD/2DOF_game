@@ -599,7 +599,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
         if (activePlayerVehicle) {
 
-            activePlayerVehicle.Rigid.velocity = Vector3.zero;
+            activePlayerVehicle.Rigid.linearVelocity = Vector3.zero;
             activePlayerVehicle.Rigid.angularVelocity = Vector3.zero;
 
             activePlayerVehicle.transform.position = position;
@@ -629,7 +629,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
         if (vehicle) {
 
-            vehicle.Rigid.velocity = Vector3.zero;
+            vehicle.Rigid.linearVelocity = Vector3.zero;
             vehicle.Rigid.angularVelocity = Vector3.zero;
 
             vehicle.transform.position = position;
@@ -662,7 +662,7 @@ public class RCC_SceneManager : RCC_Singleton<RCC_SceneManager> {
 
             timer -= Time.deltaTime;
             vehicle.canControl = false;
-            vehicle.Rigid.velocity = new Vector3(0f, vehicle.Rigid.velocity.y, 0f);
+            vehicle.Rigid.linearVelocity = new Vector3(0f, vehicle.Rigid.linearVelocity.y, 0f);
             vehicle.Rigid.angularVelocity = Vector3.zero;
             yield return null;
 

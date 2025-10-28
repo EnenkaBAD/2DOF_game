@@ -1,7 +1,7 @@
 //----------------------------------------------
 //            Realistic Car Controller
 //
-// Copyright © 2014 - 2024 BoneCracker Games
+// Copyright ï¿½ 2014 - 2024 BoneCracker Games
 // https://www.bonecrackergames.com
 // Ekrem Bugra Ozdoganlar
 //
@@ -108,8 +108,8 @@ public class RCC_CreateNewVehicle {
 
         Rigidbody rigid = Selection.activeGameObject.GetComponent<Rigidbody>();
         rigid.mass = RCC_InitialSettings.Instance.mass;
-        rigid.drag = RCC_InitialSettings.Instance.drag;
-        rigid.angularDrag = RCC_InitialSettings.Instance.angularDrag;
+        rigid.linearDamping = RCC_InitialSettings.Instance.drag;
+        rigid.angularDamping = RCC_InitialSettings.Instance.angularDrag;
         rigid.interpolation = RCC_InitialSettings.Instance.interpolation;
         rigid.collisionDetectionMode = RCC_InitialSettings.Instance.collisionDetectionMode;
 

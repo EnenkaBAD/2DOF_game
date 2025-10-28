@@ -944,7 +944,7 @@ public class RCC_CarControllerV4 : RCC_Core {
         Rigid.centerOfMass = new Vector3(COM.localPosition.x + locVel.y, COM.localPosition.y, COM.localPosition.z);
 
         //Speed.
-        speed = Rigid.velocity.magnitude * 3.6f;
+        speed = Rigid.linearVelocity.magnitude * 3.6f;
 
         if (oldEngineTorque == -1f)
             oldEngineTorque = maxEngineTorque;
@@ -1043,7 +1043,7 @@ public class RCC_CarControllerV4 : RCC_Core {
         }
 
         // Applying downforce.
-        Rigid.AddForceAtPosition(-transform.up * (Mathf.Clamp(transform.InverseTransformDirection(Rigid.velocity).z, 0f, 300f) * downForce), COM.transform.position, ForceMode.Force);
+        Rigid.AddForceAtPosition(-transform.up * (Mathf.Clamp(transform.InverseTransformDirection(Rigid.linearVelocity).z, 0f, 300f) * downForce), COM.transform.position, ForceMode.Force);
 
     }
 
@@ -1177,7 +1177,7 @@ public class RCC_CarControllerV4 : RCC_Core {
 
             if (brakeInput < .5f && speed < 5)
                 canGoReverseNow = true;
-            else if (brakeInput > 0 && transform.InverseTransformDirection(Rigid.velocity).z > 1f)
+            else if (brakeInput > 0 && transform.InverseTransformDirection(Rigid.linearVelocity).z > 1f)
                 canGoReverseNow = false;
 
         }
@@ -1185,9 +1185,9 @@ public class RCC_CarControllerV4 : RCC_Core {
         if (AutomaticGear && !semiAutomaticGear && !changingGear && !RCC_InputManager.Instance.logitechHShifterUsed) {
 
             //Reversing Bool.
-            if (brakeInput > .9f && transform.InverseTransformDirection(Rigid.velocity).z < 1f && canGoReverseNow && direction != -1)
+            if (brakeInput > .9f && transform.InverseTransformDirection(Rigid.linearVelocity).z < 1f && canGoReverseNow && direction != -1)
                 StartCoroutine(ChangeGear(-1));
-            else if (throttleInput < .1f && transform.InverseTransformDirection(Rigid.velocity).z > -1f && direction == -1)
+            else if (throttleInput < .1f && transform.InverseTransformDirection(Rigid.linearVelocity).z > -1f && direction == -1)
                 StartCoroutine(ChangeGear(0));
 
         }
@@ -1691,7 +1691,7 @@ public class RCC_CarControllerV4 : RCC_Core {
         }
 
         Vector3 v = Rigid.angularVelocity;
-        velocityAngle = (v.y * Mathf.Clamp(transform.InverseTransformDirection(Rigid.velocity).z, -1f, 1f)) * Mathf.Rad2Deg;
+        velocityAngle = (v.y * Mathf.Clamp(transform.InverseTransformDirection(Rigid.linearVelocity).z, -1f, 1f)) * Mathf.Rad2Deg;
         velocityDirection.localRotation = Quaternion.Lerp(velocityDirection.localRotation, Quaternion.AngleAxis(Mathf.Clamp(velocityAngle / 3f, -45f, 45f), Vector3.up), Time.fixedDeltaTime * 20f);
         steeringDirection.localRotation = Quaternion.Euler(0f, FrontLeftWheelCollider.WheelCollider.steerAngle, 0f);
 
@@ -1704,13 +1704,13 @@ public class RCC_CarControllerV4 : RCC_Core {
 
         float angle2 = Quaternion.Angle(velocityDirection.localRotation, steeringDirection.localRotation) * (normalizer);
 
-        Rigid.AddRelativeTorque(Vector3.up * ((angle2 * (Mathf.Clamp(transform.InverseTransformDirection(Rigid.velocity).z, -10f, 10f) / 1000f)) * steerHelperAngularVelStrength), ForceMode.VelocityChange);
+        Rigid.AddRelativeTorque(Vector3.up * ((angle2 * (Mathf.Clamp(transform.InverseTransformDirection(Rigid.linearVelocity).z, -10f, 10f) / 1000f)) * steerHelperAngularVelStrength), ForceMode.VelocityChange);
 
         if (Mathf.Abs(oldRotation - transform.eulerAngles.y) < 10f) {
 
             float turnadjust = (transform.eulerAngles.y - oldRotation) * (steerHelperLinearVelStrength / 2f);
             Quaternion velRotation = Quaternion.AngleAxis(turnadjust, Vector3.up);
-            Rigid.velocity = (velRotation * Rigid.velocity);
+            Rigid.linearVelocity = (velRotation * Rigid.linearVelocity);
 
         }
 
@@ -1726,7 +1726,7 @@ public class RCC_CarControllerV4 : RCC_Core {
         if (!isGrounded)
             return;
 
-        Vector3 velocity = Rigid.velocity;
+        Vector3 velocity = Rigid.linearVelocity;
         velocity -= transform.up * Vector3.Dot(velocity, transform.up);
         velocity.Normalize();
 
@@ -1751,7 +1751,7 @@ public class RCC_CarControllerV4 : RCC_Core {
     /// </summary>
     private void AngularDragHelper() {
 
-        Rigid.angularDrag = Mathf.Lerp(0f, 10f, (speed * angularDragHelperStrength) / 1000f);
+        Rigid.angularDamping = Mathf.Lerp(0f, 10f, (speed * angularDragHelperStrength) / 1000f);
 
     }
 
@@ -2530,8 +2530,8 @@ public class RCC_CarControllerV4 : RCC_Core {
             rigid = gameObject.AddComponent<Rigidbody>();
 
         rigid.mass = RCC_InitialSettings.Instance.mass;
-        rigid.drag = RCC_InitialSettings.Instance.drag;
-        rigid.angularDrag = RCC_InitialSettings.Instance.angularDrag;
+        rigid.linearDamping = RCC_InitialSettings.Instance.drag;
+        rigid.angularDamping = RCC_InitialSettings.Instance.angularDrag;
         rigid.interpolation = RCC_InitialSettings.Instance.interpolation;
         rigid.collisionDetectionMode = RCC_InitialSettings.Instance.collisionDetectionMode;
 

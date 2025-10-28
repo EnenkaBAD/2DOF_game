@@ -170,7 +170,7 @@ public class RCC_CarSelectionExample : RCC_Core {
 
         // Resets the velocity of the vehicle.
         _spawnedVehicles[selectedIndex].GetComponent<Rigidbody>().ResetInertiaTensor();
-        _spawnedVehicles[selectedIndex].GetComponent<Rigidbody>().velocity = Vector3.zero;
+        _spawnedVehicles[selectedIndex].GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         _spawnedVehicles[selectedIndex].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
         // If RCC Camera is choosen, it wil enable RCC_CameraCarSelection script. This script was used to orbit the camera.

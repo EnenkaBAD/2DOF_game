@@ -302,7 +302,7 @@ public class RCC_Recorder : RCC_Core {
 
         for (int i = 0; i < recorded.rigids.Length && mode == Mode.Play; i++) {
 
-            CarController.Rigid.velocity = recorded.rigids[i].velocity;
+            CarController.Rigid.linearVelocity = recorded.rigids[i].velocity;
             CarController.Rigid.angularVelocity = recorded.rigids[i].angularVelocity;
 
             yield return new WaitForFixedUpdate();
@@ -336,7 +336,7 @@ public class RCC_Recorder : RCC_Core {
 
                 Inputs.Add(new PlayerInput(CarController.throttleInput, CarController.brakeInput, CarController.steerInput, CarController.handbrakeInput, CarController.clutchInput, CarController.boostInput, CarController.fuelInput, CarController.direction, CarController.canGoReverseNow, CarController.currentGear, CarController.changingGear, CarController.indicatorsOn, CarController.lowBeamHeadLightsOn, CarController.highBeamHeadLightsOn));
                 Transforms.Add(new PlayerTransform(CarController.transform.position, CarController.transform.rotation));
-                Rigidbodies.Add(new PlayerRigidBody(CarController.Rigid.velocity, CarController.Rigid.angularVelocity));
+                Rigidbodies.Add(new PlayerRigidBody(CarController.Rigid.linearVelocity, CarController.Rigid.angularVelocity));
 
                 break;
 

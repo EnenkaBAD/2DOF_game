@@ -36,7 +36,7 @@ public class RCC_CharacterController : RCC_Core {
 
         //  Getting steer input.
         steerInput = Mathf.Lerp(steerInput, CarController.steerInput, Time.deltaTime * 5f);
-        directionInput = CarController.transform.InverseTransformDirection(CarController.Rigid.velocity).z;
+        directionInput = CarController.transform.InverseTransformDirection(CarController.Rigid.linearVelocity).z;
         impactInput -= Time.deltaTime * 5f;
 
         //  Clamping impact input.
