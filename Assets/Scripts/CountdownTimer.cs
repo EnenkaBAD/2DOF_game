@@ -12,9 +12,13 @@ public class CountdownTimer : MonoBehaviour
 
 
     [SerializeField] private float startDelay = 0.5f; 
-    [SerializeField] private float tickDuration = 1f;  
+    [SerializeField] private float tickDuration = 1f;
+    [SerializeField] private GameTimer timer;
+    
+      
 
     private AudioSource audioSource;
+    
 
     private void Start()
     {
@@ -48,12 +52,12 @@ public class CountdownTimer : MonoBehaviour
         countdownText.text = "Поехали!";
         PlayGoSound();
         GameObject.Destroy(stopWall);
+        timer.StartTimer();
         yield return new WaitForSeconds(tickDuration);
         
         countdownText.text = "";
 
-        // Здесь можно активировать игровые объекты, запустить таймер и т. п.
-        // Например: GameManager.Instance.StartGame();
+        
     }
 
     private void PlayTickSound()
