@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3b9d9689fae93418e33472f9eccaa7, type: 3}
+  m_Name: BhapticsSettings
+  m_EditorClassIdentifier: Bhaptics.SDK2::Bhaptics.SDK2.BhapticsSettings
+  appName: 2_dof
+  appId: 68fb9539c43ee8b972be7f94
+  apiKey: E5ZE5ramvskOWEYeQOVx
+  lastDeployVersion: 1
+  eventData:
+  - durationMillis: 100
+    key: left_steer
+    description: 
+    isAudio: 1
+    updateTime: 1761937082861
+    positions: []
+  - durationMillis: 100
+    key: right_steer
+    description: 
+    isAudio: 1
+    updateTime: 1761937114050
+    positions: []
+  defaultDeploy: '{"status":true,"message":{"id":"6905074f738ea7001e45c066","createTime":1761937231124,"name":"2_dof","creator":"qLJdaewG1nWrbDIN5tj6KDkn9CS2","workspaceId":"68fb9539c43ee8b972be7f94","version":1,"disableValidation":false,"hapticMappings":[{"id":"6905074f738ea7001e45c067","deployId":"6905074f738ea7001e45c066","enable":true,"intensity":100,"key":"left_steer","category":"Default","description":"","updateTime":1761937082861,"tactFilePatterns":[],"audioFilePatterns":[{"patternId":"67738c77bf059b6310f87b91","snapshotId":"67a08f4609f25a07467ce551","position":"Vest","clip":{"id":"","name":"Slash
+    Recoil (Left Hand)","version":2,"duration":4,"patterns":{"ForearmL":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","LzkAAAAAAAAAAAAAAAAAAAAAAP8=","RR8AAAAAAAAAAAAAAAAAAAAAAP8=","SxUAAAAAAAAAAAAAAAAAAAAAAP8=","WVcAAAAAAAAAAAAAAAAAAAAAAP8="],"ForearmR":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8="],"VestFront":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","IwAAAAsAAAAAAAAAAAAAAAAAAP8=","JAAAAB0AAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8="],"VestBack":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","FQAAABUAAAAAAAAAAAAAAAAAAP8=","AAAAABoAAAAAAAAAAAAAAAAAAP8=","Fx0AAAANAAAAAAAAAAAAAAAAAP8=","Fx0AAAAVEAAAAAAAAAAAAAAAAP8="]}}}],"eventTime":100},{"id":"6905074f738ea7001e45c068","deployId":"6905074f738ea7001e45c066","enable":true,"intensity":100,"key":"right_steer","category":"Default","description":"","updateTime":1761937114050,"tactFilePatterns":[],"audioFilePatterns":[{"patternId":"67738c77bf059b6310f87b8f","snapshotId":"67b572df49a91a4b93090b5b","position":"Vest","clip":{"id":"","name":"Slash
+    Recoil (Right Hand)","version":2,"duration":4,"patterns":{"ForearmL":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8="],"ForearmR":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AEUfAAAAAAAAAAAAAAAAAAAAAP8=","AC85AAAAAAAAAAAAAAAAAAAAAP8=","ACdAAAAAAAAAAAAAAAAAAAAAAP8=","AFdXAAAAAAAAAAAAAAAAAAAAAP8="],"VestFront":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAIgAAABgAAAAAAAAAAAAAAP8=","AAAQIAAAEB8AAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAAAAAAAAAAAAAAAAAAAAAAP8="],"VestBack":["AAAAAAAAAAAAAAAAAAAAAAAAAP8=","AAAAGQAAAAAAAAAAAAAAAAAAAP8=","AAAAFAAAAAAAAAAAAAAAAAAAAP8=","AAAbGgAAAA4AAAAAAAAAAAAAAP8=","AAAbGAAAEhQAAAAAAAAAAAAAAP8="]}}}],"eventTime":100}],"categoryOptions":["Default"],"description":""},"errorMessage":null,"timestamp":1761937661160,"code":200}'

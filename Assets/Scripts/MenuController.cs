@@ -1,8 +1,10 @@
+using LogitechG29.Sample.Input;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public InputControllerReader inputControllerReader;
     public void PlayGame()
     { 
         SceneManager.LoadSceneAsync(1);
@@ -17,5 +19,11 @@ public class MenuController : MonoBehaviour
             // Если это собранная версия игры
             Application.Quit();
 #endif
+    }
+
+    private void Update()
+    {
+        if (inputControllerReader.LeftShift) PlayGame();
+        if (inputControllerReader.RightShift) QuitGame();
     }
 }
