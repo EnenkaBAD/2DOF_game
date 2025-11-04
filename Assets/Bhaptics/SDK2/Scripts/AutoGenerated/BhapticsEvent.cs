@@ -20,5 +20,9 @@ namespace Bhaptics.SDK2
         public const string LEFT_STEER = "left_steer";
         
         public const string RIGHT_STEER = "right_steer";
+        
+        public const string LEFT_DAMAGE = "left_damage";
+        
+        public const string RIGHT_DAMAGE = "right_damage";
     }
 }

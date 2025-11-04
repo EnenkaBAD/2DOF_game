@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: befdde6fd81058948a13ce55df4ac035, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: befdde6fd81058948a13ce55df4ac035, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -225,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701e6ac2459748244b32e4f8a894f29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingStone
-  rollingSound: {fileID: 8300000, guid: 2c9a392e1d50e4e4db8df90da322b71b, type: 3}
   destroyDelay: 10
 --- !u!82 &4963737271234338674
 AudioSource:
