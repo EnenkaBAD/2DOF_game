@@ -24,5 +24,9 @@ namespace Bhaptics.SDK2
         public const string LEFT_DAMAGE = "left_damage";
         
         public const string RIGHT_DAMAGE = "right_damage";
+        
+        public const string FW_DAMAGE = "fw_damage";
+        
+        public const string HANDS_VIBRATION = "hands_vibration";
     }
 }

@@ -536,7 +536,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8b245dcb-2b15-4ed2-84b8-21fc0d3279ab"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/period"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Logitech G29"",

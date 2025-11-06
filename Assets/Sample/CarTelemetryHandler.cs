@@ -55,18 +55,38 @@ public class CarTelemetryHandler : MonoBehaviour
         _telemetryDataData.Velocity = rigidbody.linearVelocity;
     }
 
+    //private void UpdateAngles()
+    //{
+    //    var euler = vehicleTransform.eulerAngles;
+
+    //    euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
+    //    euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
+    //    euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
+
+    //    euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
+    //    euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
+    //    euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
+
+    //    _telemetryDataData.Angles = euler;
+    //}
     private void UpdateAngles()
     {
         var euler = vehicleTransform.eulerAngles;
 
-        euler.x = Mathf.Approximately(euler.x, 180) ? 0 : euler.x;
-        euler.z = Mathf.Approximately(euler.z, 180) ? 0 : euler.z;
-        euler.y = Mathf.Approximately(euler.y, 180) ? 0 : euler.y;
-
-        euler.x = euler.x > 180 ? euler.x - 360 : euler.x;
-        euler.z = euler.z > 180 ? euler.z - 360 : euler.z;
-        euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
+        euler.x = NormalizeAngle(euler.x);
+        euler.y = NormalizeAngle(euler.y);
+        euler.z = NormalizeAngle(euler.z);
 
         _telemetryDataData.Angles = euler;
+    }
+
+    private float NormalizeAngle(float angle)
+    {
+        angle = angle % 360f;
+        if (angle > 180f)
+            angle -= 360f;
+        else if (angle < -180f)
+            angle += 360f;
+        return angle;
     }
 }
