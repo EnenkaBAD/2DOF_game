@@ -9,7 +9,10 @@ public class Finish : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             timer.PauseTimer();
-            restartUI.SetActive(true);
+            Invoke("activeUI", 3f);
         }
     }
+
+    private void activeUI()
+        { restartUI.SetActive(true); }
 }
